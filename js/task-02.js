@@ -9,13 +9,13 @@ const ingredients = [
 ];
 
 const ingredientsRef = document.getElementById("ingredients");
-let ingredientsEl=document.createElement("li");
 
-
-  ingredients.map(ingredient => {
-  ingredientsEl.classList="item";
-  ingredientsEl.textContent = ingredient;
-  console.log(ingredientsEl);
+const elements =ingredients.map(ingredient => {
+  const li = document.createElement("li");
+  li.textContent=ingredient;
+  li.classList.add("item");
+  return li;
+  
   });
-  ingredientsRef.append(ingredientsEl);
+  ingredientsRef.append(...elements);
 
