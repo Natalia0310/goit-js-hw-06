@@ -12,7 +12,7 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-const galleryRef = document.querySelector(".gallery");
+const galleryRef = document.getElementById("gallery");
 const imageList = images.map(image => {
   return (`<li class="gallery-item"><img src=${image.url} alt=${image.alt} width=360 class="image-gallery</li>`).join('\n')
 

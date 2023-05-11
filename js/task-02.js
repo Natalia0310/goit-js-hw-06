@@ -1,4 +1,3 @@
-// const bodyEl = document.getElementById('root');
 
 const ingredients = [
   'Potatoes',
@@ -9,15 +8,14 @@ const ingredients = [
   'Condiments',
 ];
 
-// let ingredientsEl = document.createElement('ul');
-// bodyEl.append(ingredientsEl);
+const ingredientsRef = document.getElementById("ingredients");
+let ingredientsEl=document.createElement("li");
 
-// // let ingredientsMarkup = ingredients
-// //     .map(ingredient => `<li>${ingredient}</li>`)
-// //     .join('\n');
 
-// let ingredientsMarkup = ingredients.reduce((acc, ingredient, index) => {
-//     return acc + `<li>${ingredient}</li>`;
-// }, '');
+  ingredients.map(ingredient => {
+  ingredientsEl.classList="item";
+  ingredientsEl.textContent = ingredient;
+  console.log(ingredientsEl);
+  });
+  ingredientsRef.append(ingredientsEl);
 
-// ingredientsEl.innerHTML = ingredientsMarkup;
