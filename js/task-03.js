@@ -12,15 +12,21 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-const galleryRef = document.getElementById("gallery");
-const elements = images.map(image => {
-  const li=document.createElement("li");
-  return (`<li class="gallery-item"><img src=${image.url} alt=${image.alt} width=360 class="image-gallery</li>`).join('\n')
-  
-return li;
-  });
-  galleryRef.insertAdjacentHTML("beforeend",elements);
+
 
   
-
+  const list = document.querySelector(".gallery");
+  const newElement = images
+    .map(
+      (element) =>
+        `<li><img class="picture" src=${element.url} width = '350' alt='${element.alt}'></img></li>`
+    )
+    .join("");
+  list.insertAdjacentHTML("beforeend", newElement);
+  
+  list.style.listStyle = "none";
+  list.style.display = "flex";
+  list.style.gap = "10px";
+  list.style.justifyContent = "center";
+  list.style.alignItems = "center";
   
