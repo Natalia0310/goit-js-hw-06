@@ -1,17 +1,24 @@
-const emailElm = document.querySelector(".login-form");
-emailElm.addEventListener("submit", emailElmSubmite);
-function emailElmSubmite(event) {
+
+const formEl = document.querySelector(`.login-form`);
+
+formEl.addEventListener(`submit`, handleFormSubmit);
+
+function handleFormSubmit(event) {
   event.preventDefault();
-  const {
-    elements: { email, password },
-  } = event.currentTarget;
 
-  if (email.value === "" || password.value === "") {
-    return alert("Please fill in all the fields!");
+  const email = event.currentTarget.elements.email;
+  const password = event.currentTarget.elements.password;
+
+  if (email.value === '' || password.value === '') {
+    return alert('All fields must be filled in');
   }
+  const formData = {
+    email: email.value,
+    password: password.value,
+  };
 
-  const userAcount = { email: email.value, password: password.value };
-  console.log("userAcount", userAcount);
+  console.log(formData);
 
   event.currentTarget.reset();
 }
+
